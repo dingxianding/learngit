@@ -1,0 +1,284 @@
+只有highcharts是可以的，有easyui各个元素都是可以的，但是一旦绑定表格后就不行了，样式就乱了。采用在dialog中嵌套HTML的方法做，还没有做成功
+<iframe src="/WEB-INF/views/tpls/charts.html"  frameborder="0" scrolling="no"></iframe>
+<iframe src="charts.html"  frameborder="0" scrolling="no"></iframe>
+
+
+
+2017年的
+1483200000000
+1483200000
+今天的
+1526457463000
+
+head的
+datagrid-cell datagrid-sort datagrid-cell-c6-head1
+cell的
+datagrid-cell datagrid-cell-c6-head1
+
+
+没有给列设置ID时
+表头的属性
+
+表的属性
+
+给列设置ID后
+表头的属性
+表体的属性
+
+
+//当前页里的数据行数
+$("#grid").datagrid('getRows').length
+ 
+//总共有多少数据
+$("#grid").datagrid('getData').total
+$("#grid").datagrid("getData") 返回一个对象Object {total: 5, rows: Array[5], originalRows: Array[5]}total: 当前grid里的总记录数 也等于 originalRows.lengthrows:当前页的行originalRows: grid绑定的所有数据。
+
+
+legend: {
+                            data:['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+                        }
+                    ,
+                        series: [
+                            {
+                                name: '邮件营销',
+                                type: 'line',
+                                stack: '总量',
+                                data: [120, 132, 101, 134, 90, 230, 210]
+                            },
+                            {
+                                name: '联盟广告',
+                                type: 'line',
+                                stack: '总量',
+                                data: [220, 182, 191, 234, 290, 330, 310]
+                            },
+                            {
+                                name: '视频广告',
+                                type: 'line',
+                                stack: '总量',
+                                data: [150, 232, 201, 154, 190, 330, 410]
+                            },
+                            {
+                                name: '直接访问',
+                                type: 'line',
+                                stack: '总量',
+                                data: [320, 332, 301, 334, 390, 330, 320]
+                            },
+                            {
+                                name: '搜索引擎',
+                                type: 'line',
+                                stack: '总量',
+                                data: [820, 932, 901, 934, 1290, 1330, 1320]
+                            }
+                        ]
+						
+						
+						
+						<!--<div id="container"></div>-->
+<script type="text/javascript">
+
+    Highcharts.chart('container', {
+
+        title: {
+            text: 'Solar Employment Growth by Sector, 2010-2016'
+        },
+
+        subtitle: {
+            text: 'Source: thesolarfoundation.com'
+        },
+
+        yAxis: {
+            title: {
+                text: 'Number of Employees'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 2010
+            }
+        },
+
+        series: [{
+            name: 'Installation',
+            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+        }, {
+            name: 'Manufacturing',
+            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+        }, {
+            name: 'Sales & Distribution',
+            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+        }, {
+            name: 'Project Development',
+            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+        }, {
+            name: 'Other',
+            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
+    });
+</script>
+
+<script src="/framework/Highcharts-6.1.0/code/highcharts.js"></script>
+<script src="/framework/Highcharts-6.1.0/code/modules/exporting.js"></script>
+<script src="/framework/Highcharts-6.1.0/code/modules/series-label.js"></script>
+<script src="/framework/Highcharts-6.1.0/code/modules/export-data.js"></script>
+
+
+    <div id="viewDiv">
+        <iframe src="charts.html" width="100%" height="100%" frameborder="0">
+            您的浏览器不支持iframe，请升级
+        </iframe>
+    </div>
+
+
+	
+	<div id="example_wrapper" class="dataTables_wrapper am-datatable am-form-inline dt-amazeui"><div class="am-g am-datatable-hd"><div class="am-u-sm-6"><div class="dataTables_length am-form-group am-datatable-length" id="example_length"><label>显示 <select name="example_length" aria-controls="example" class="am-form-select am-input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> 项结果</label></div></div><div class="am-u-sm-6"><div id="example_filter" class="dataTables_filter am-datatable-filter"><label>搜索：<input type="search" class="am-form-field am-input-sm" aria-controls="example"></label></div></div></div><div class="am-g"><div class="am-u-sm-12"><table class="am-table am-table-striped am-table-bordered am-table-compact dataTable" id="example" role="grid" aria-describedby="example_info">
+  <thead>
+  <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: 以降序排列此列" style="width: 154.2px;">Rendering engine</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Browser: 以升序排列此列" style="width: 196.2px;">Browser</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Platform(s): 以升序排列此列" style="width: 181.2px;">Platform(s)</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Engine version: 以升序排列此列" style="width: 128.2px;">Engine version</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Grade: 以升序排列此列" style="width: 56.2px;">Grade</th></tr>
+  </thead>
+  <tfoot>
+  <tr><th rowspan="1" colspan="1">Rendering engine</th><th rowspan="1" colspan="1">Browser</th><th rowspan="1" colspan="1">Platform(s)</th><th rowspan="1" colspan="1">Engine version</th><th rowspan="1" colspan="1">Grade</th></tr>
+  </tfoot>
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <tr class="gradeA odd" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Firefox 1.0</td>
+    <td>Win 98+ / OSX.2+</td>
+    <td class="center">1.7</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA even" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Firefox 1.5</td>
+    <td>Win 98+ / OSX.2+</td>
+    <td class="center">1.8</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA odd" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Firefox 2.0</td>
+    <td>Win 98+ / OSX.2+</td>
+    <td class="center">1.8</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA even" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Firefox 3.0</td>
+    <td>Win 2k+ / OSX.3+</td>
+    <td class="center">1.9</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA odd" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Camino 1.0</td>
+    <td>OSX.2+</td>
+    <td class="center">1.8</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA even" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Camino 1.5</td>
+    <td>OSX.3+</td>
+    <td class="center">1.8</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA odd" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Netscape 7.2</td>
+    <td>Win 95+ / Mac OS 8.6-9.2</td>
+    <td class="center">1.7</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA even" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Netscape Browser 8</td>
+    <td>Win 98SE+</td>
+    <td class="center">1.7</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA odd" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Netscape Navigator 9</td>
+    <td>Win 98+ / OSX.2+</td>
+    <td class="center">1.8</td>
+    <td class="center">A</td>
+  </tr><tr class="gradeA even" role="row">
+    <td class="sorting_1">Gecko</td>
+    <td>Mozilla 1.0</td>
+    <td>Win 95+ / OSX.1+</td>
+    <td class="center">1</td>
+    <td class="center">A</td>
+  </tr></tbody>
+</table></div></div><div class="am-g am-datatable-footer"><div class="am-u-sm-5"><div class="dataTables_info am-datatable-info" id="example_info" role="status" aria-live="polite">显示第 1 至 10 项结果，共 57 项</div></div><div class="am-u-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="example_paginate"><ul class="am-datatable-pager am-pagination am-pagination-right am-text-sm"><li class="paginate_button previous am-disabled" id="example_previous"><a href="#" aria-controls="example" data-dt-idx="0" tabindex="0">上页</a></li><li class="paginate_button am-active"><a href="#" aria-controls="example" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button "><a href="#" aria-controls="example" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="example" data-dt-idx="3" tabindex="0">3</a></li><li class="paginate_button "><a href="#" aria-controls="example" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="example" data-dt-idx="5" tabindex="0">5</a></li><li class="paginate_button "><a href="#" aria-controls="example" data-dt-idx="6" tabindex="0">6</a></li><li class="paginate_button next" id="example_next"><a href="#" aria-controls="example" data-dt-idx="7" tabindex="0">下页</a></li></ul></div></div></div></div>
