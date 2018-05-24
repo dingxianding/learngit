@@ -1,3 +1,8 @@
+aaa
+bbb
+ccc
+ddd
+
 只有highcharts是可以的，有easyui各个元素都是可以的，但是一旦绑定表格后就不行了，样式就乱了。采用在dialog中嵌套HTML的方法做，还没有做成功
 <iframe src="/WEB-INF/views/tpls/charts.html"  frameborder="0" scrolling="no"></iframe>
 <iframe src="charts.html"  frameborder="0" scrolling="no"></iframe>
